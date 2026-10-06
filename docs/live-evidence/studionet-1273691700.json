@@ -1,0 +1,680 @@
+{
+  "contract": "0x3A03347dBA24C3a7fa1511Dd698B9D8dfA334B2a",
+  "network": "GenLayer StudioNet 61999",
+  "run": "1273691700",
+  "dao": "mandate-1273691700",
+  "mandate": "mandate-1273691700.proposal-1273691700",
+  "actors": {
+    "dao_authority_publisher": "0xeb57bc7125fa60d7482CE12058397369AB3581f8",
+    "executor": "0x2da5393d7BBb9A037dc3abB56DbbC5C150fc843f"
+  },
+  "transactions": [
+    {
+      "label": "wallet A creates DAO namespace",
+      "method": "create_dao",
+      "expected": "SUCCESS",
+      "hash": "0xdc36d1da09adb5c24078f46dfb1be83a57df666abf7dd4a4e37eaee1bedf3b33",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "wallet A enables itself as publisher",
+      "method": "set_publisher",
+      "expected": "SUCCESS",
+      "hash": "0xf8740582238dadd433223cc92db45042e72ec98769c9e1859de22e3475b409a4",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "wallet A enables wallet B as executor",
+      "method": "set_executor",
+      "expected": "SUCCESS",
+      "hash": "0x26b700c49864961d5b83b17b2e263b0e761e9adac7fe5c39752c467ae5144717",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "publisher records exact mandate",
+      "method": "publish_mandate",
+      "expected": "SUCCESS",
+      "hash": "0x023ebf71f84c165a90fbb87b560847329626438594f0448d645aeef26a1b9423",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "publisher seals compliant action",
+      "method": "seal_action",
+      "expected": "SUCCESS",
+      "hash": "0xd91922fd71d60fd9ad106e069160ca34331e5131e24ab0426b5c1724c4c8eded",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "wallet B triggers compliant assessment",
+      "method": "assess_action",
+      "expected": "SUCCESS",
+      "hash": "0xfa358eae071c3d63b4eaab620206d1fc64082b9f00bbe29cb946a020eac65de0",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "wrong wallet cannot consume",
+      "method": "consume_permit",
+      "expected": "ERROR",
+      "hash": "0xdd918a1ce85d5d9049b0de896ba8700652f5876a55fb7b0cf349205b66ef6a5d",
+      "status": "FINALIZED",
+      "execution": "ERROR"
+    },
+    {
+      "label": "digest substitution cannot consume",
+      "method": "consume_permit",
+      "expected": "ERROR",
+      "hash": "0x4632f42cd324b241c52d3044685db389990023ba6b47750f2f4e6b4c6f423803",
+      "status": "FINALIZED",
+      "execution": "ERROR"
+    },
+    {
+      "label": "open permit blocks mandate revision",
+      "method": "revise_mandate",
+      "expected": "ERROR",
+      "hash": "0xfda0480b4cae6e8d1e20ee77cb9aba74c3dd4f33c200fd09da9d4e140b3c49f1",
+      "status": "FINALIZED",
+      "execution": "ERROR"
+    },
+    {
+      "label": "assigned executor consumes exact permit",
+      "method": "consume_permit",
+      "expected": "SUCCESS",
+      "hash": "0xf8dee2839c420e78baef53797adcaaf2d198ff56d4c0e47a7b629c6fcb0ffc28",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "replay is rejected",
+      "method": "consume_permit",
+      "expected": "ERROR",
+      "hash": "0x13dff596f35c6cc660a8f1ba01bf7d251443315ee32cbce37135b140a6314d59",
+      "status": "FINALIZED",
+      "execution": "ERROR"
+    },
+    {
+      "label": "publisher seals deterministic overflow",
+      "method": "seal_action",
+      "expected": "SUCCESS",
+      "hash": "0x08e132be5b64197ba4299593ff42b35b696facf198d9e51950e0964611b1a483",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "overflow assessment is deterministic",
+      "method": "assess_action",
+      "expected": "SUCCESS",
+      "hash": "0x95486c86891e0f6ff9d2dd5bc895ff592ae9517bcb916249a75aaa5dd7890204",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "publisher seals semantic conflict",
+      "method": "seal_action",
+      "expected": "SUCCESS",
+      "hash": "0x42b1f67ba089d9035f7a94080aba3ce5235fc7e8381161a889a6e6ccd6afe39d",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "wallet B triggers conflict assessment",
+      "method": "assess_action",
+      "expected": "SUCCESS",
+      "hash": "0x73bcf5d0687b591447002cb9979672f3ba72a0d1c4f1600e835a1656ad9f39f7",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "publisher seals future-stale action",
+      "method": "seal_action",
+      "expected": "SUCCESS",
+      "hash": "0xcd345243a57cd77d0fd52ffc2566a66eda92404bbd3990f01c631340c42d146d",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "publisher advances mandate revision",
+      "method": "revise_mandate",
+      "expected": "SUCCESS",
+      "hash": "0x2e34938c8cbe2d9548cdca74fc0bc0aa49d3fae0b596c38d77ae0de696d7eeef",
+      "status": "FINALIZED",
+      "execution": "SUCCESS"
+    },
+    {
+      "label": "stale action assessment is rejected",
+      "method": "assess_action",
+      "expected": "ERROR",
+      "hash": "0x2fb5911c0a08663da7c80013b4334d2186c9b8f9bf7b38cadf349be4f6a7d8b3",
+      "status": "FINALIZED",
+      "execution": "ERROR"
+    }
+  ],
+  "assertions": [
+    {
+      "label": "deployed MandateLock V1 identity",
+      "pass": true,
+      "details": {
+        "name": "MandateLock",
+        "schema": "semantic-treasury-execution-firewall-v1",
+        "version": 1
+      }
+    },
+    {
+      "label": "wallet A creates DAO namespace finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0xdc36d1da09adb5c24078f46dfb1be83a57df666abf7dd4a4e37eaee1bedf3b33",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "wallet A enables itself as publisher finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0xf8740582238dadd433223cc92db45042e72ec98769c9e1859de22e3475b409a4",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "wallet A enables wallet B as executor finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0x26b700c49864961d5b83b17b2e263b0e761e9adac7fe5c39752c467ae5144717",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "publisher records exact mandate finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0x023ebf71f84c165a90fbb87b560847329626438594f0448d645aeef26a1b9423",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "publisher seals compliant action finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0xd91922fd71d60fd9ad106e069160ca34331e5131e24ab0426b5c1724c4c8eded",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "wallet B triggers compliant assessment finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0xfa358eae071c3d63b4eaab620206d1fc64082b9f00bbe29cb946a020eac65de0",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "compliant action creates exact permit",
+      "pass": true,
+      "details": {
+        "action_id": "mandate-1273691700.proposal-1273691700.pass",
+        "asset": "0x2222222222222222222222222222222222222222",
+        "calldata_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "chain_id": 1,
+        "commitment": "f8ce05395106a4fc328b4d04de83d579b0b53b10ea6b9ef47d4548eba3e7f207",
+        "consumed": false,
+        "executor": "0x2da5393d7bbb9a037dc3abb56dbbc5c150fc843f",
+        "exists": true,
+        "finding": "The action is a one-time payment of 4000 units to a recipient for the stated purpose of an independent smart-contract security audit. This falls within the authorized one-time payment cap of 5000 units. No recurring stream, grant, swap, or additional side effect is indicated. The action aligns with the mandate's purpose and does not exhibit prohibited side effects or conditions.",
+        "finding_digest": "0afd9b674fdf0d17eaae72273731084694a69dbb1ef3eeb9953015fb8b2d6ca8",
+        "mandate_digest": "00b9b079e5f3f8d7ef1ec65c1e3aeba5b95854bc7d76d68e91f899dd27e4a036",
+        "mandate_id": "mandate-1273691700.proposal-1273691700",
+        "mandate_revision": 1,
+        "manifest": "Execute one payment of 4000 units for the independent smart-contract security audit. No recurring stream, grant, swap, or additional side effect.",
+        "nonce": "pass-1273691700",
+        "permit_digest": "e0fcaac2aef7356983aa1094584c6991c1fc7a53caa49cc03088401329cd55e1",
+        "recipient": "0x3333333333333333333333333333333333333333",
+        "status": "AUTHORIZED",
+        "target": "0x1111111111111111111111111111111111111111",
+        "value": 4000,
+        "verdict": "COMPLIANT",
+        "violations": []
+      }
+    },
+    {
+      "label": "wrong wallet cannot consume finalized with ERROR",
+      "pass": true,
+      "details": {
+        "hash": "0xdd918a1ce85d5d9049b0de896ba8700652f5876a55fb7b0cf349205b66ef6a5d",
+        "status": "FINALIZED",
+        "execution": "ERROR"
+      }
+    },
+    {
+      "label": "digest substitution cannot consume finalized with ERROR",
+      "pass": true,
+      "details": {
+        "hash": "0x4632f42cd324b241c52d3044685db389990023ba6b47750f2f4e6b4c6f423803",
+        "status": "FINALIZED",
+        "execution": "ERROR"
+      }
+    },
+    {
+      "label": "open permit blocks mandate revision finalized with ERROR",
+      "pass": true,
+      "details": {
+        "hash": "0xfda0480b4cae6e8d1e20ee77cb9aba74c3dd4f33c200fd09da9d4e140b3c49f1",
+        "status": "FINALIZED",
+        "execution": "ERROR"
+      }
+    },
+    {
+      "label": "assigned executor consumes exact permit finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0xf8dee2839c420e78baef53797adcaaf2d198ff56d4c0e47a7b629c6fcb0ffc28",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "permit consumed exactly once",
+      "pass": true,
+      "details": {
+        "action_id": "mandate-1273691700.proposal-1273691700.pass",
+        "asset": "0x2222222222222222222222222222222222222222",
+        "calldata_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "chain_id": 1,
+        "commitment": "f8ce05395106a4fc328b4d04de83d579b0b53b10ea6b9ef47d4548eba3e7f207",
+        "consumed": true,
+        "executor": "0x2da5393d7bbb9a037dc3abb56dbbc5c150fc843f",
+        "exists": true,
+        "finding": "The action is a one-time payment of 4000 units to a recipient for the stated purpose of an independent smart-contract security audit. This falls within the authorized one-time payment cap of 5000 units. No recurring stream, grant, swap, or additional side effect is indicated. The action aligns with the mandate's purpose and does not exhibit prohibited side effects or conditions.",
+        "finding_digest": "0afd9b674fdf0d17eaae72273731084694a69dbb1ef3eeb9953015fb8b2d6ca8",
+        "mandate_digest": "00b9b079e5f3f8d7ef1ec65c1e3aeba5b95854bc7d76d68e91f899dd27e4a036",
+        "mandate_id": "mandate-1273691700.proposal-1273691700",
+        "mandate_revision": 1,
+        "manifest": "Execute one payment of 4000 units for the independent smart-contract security audit. No recurring stream, grant, swap, or additional side effect.",
+        "nonce": "pass-1273691700",
+        "permit_digest": "e0fcaac2aef7356983aa1094584c6991c1fc7a53caa49cc03088401329cd55e1",
+        "recipient": "0x3333333333333333333333333333333333333333",
+        "status": "CONSUMED",
+        "target": "0x1111111111111111111111111111111111111111",
+        "value": 4000,
+        "verdict": "COMPLIANT",
+        "violations": []
+      }
+    },
+    {
+      "label": "replay is rejected finalized with ERROR",
+      "pass": true,
+      "details": {
+        "hash": "0x13dff596f35c6cc660a8f1ba01bf7d251443315ee32cbce37135b140a6314d59",
+        "status": "FINALIZED",
+        "execution": "ERROR"
+      }
+    },
+    {
+      "label": "publisher seals deterministic overflow finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0x08e132be5b64197ba4299593ff42b35b696facf198d9e51950e0964611b1a483",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "overflow assessment is deterministic finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0x95486c86891e0f6ff9d2dd5bc895ff592ae9517bcb916249a75aaa5dd7890204",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "overflow blocks without permit",
+      "pass": true,
+      "details": {
+        "action_id": "mandate-1273691700.proposal-1273691700.overflow",
+        "asset": "0x2222222222222222222222222222222222222222",
+        "calldata_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "chain_id": 1,
+        "commitment": "62130c6c4bcaa57e16f2bab266252946f12186b3ef8692ea0881994aa30eaebd",
+        "consumed": false,
+        "executor": "0x2da5393d7bbb9a037dc3abb56dbbc5c150fc843f",
+        "exists": true,
+        "finding": "Structured action fields exceed the exact deterministic mandate scope.",
+        "finding_digest": "cf29c2f8484ca8922608c26adc5a60deba438ee108537ca0660946febbce7685",
+        "mandate_digest": "00b9b079e5f3f8d7ef1ec65c1e3aeba5b95854bc7d76d68e91f899dd27e4a036",
+        "mandate_id": "mandate-1273691700.proposal-1273691700",
+        "mandate_revision": 1,
+        "manifest": "Execute one payment of 4000 units for the independent smart-contract security audit. No recurring stream, grant, swap, or additional side effect.",
+        "nonce": "overflow-1273691700",
+        "permit_digest": "",
+        "recipient": "0x3333333333333333333333333333333333333333",
+        "status": "BLOCKED",
+        "target": "0x1111111111111111111111111111111111111111",
+        "value": 7500,
+        "verdict": "SCOPE_EXCEEDED",
+        "violations": [
+          "VALUE_EXCEEDS_CAP"
+        ]
+      }
+    },
+    {
+      "label": "publisher seals semantic conflict finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0x42b1f67ba089d9035f7a94080aba3ce5235fc7e8381161a889a6e6ccd6afe39d",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "wallet B triggers conflict assessment finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0x73bcf5d0687b591447002cb9979672f3ba72a0d1c4f1600e835a1656ad9f39f7",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "semantic conflict never creates permit",
+      "pass": true,
+      "details": {
+        "action_id": "mandate-1273691700.proposal-1273691700.conflict",
+        "asset": "0x2222222222222222222222222222222222222222",
+        "calldata_digest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "chain_id": 1,
+        "commitment": "46300e6f24c7c73b0bdad62039407da2f3e77f6b3bcd589c8b9eb44d7ecb2868",
+        "consumed": false,
+        "executor": "0x2da5393d7bbb9a037dc3abb56dbbc5c150fc843f",
+        "exists": true,
+        "finding": "The action attempts to establish a recurring monthly stream for general operations and grants, whereas the mandate strictly limits the authorization to a one-time payment solely for a security audit.",
+        "finding_digest": "858be1fa5baba0e560d69e806c2b08c8cfbef12f050cfa427ae9ed3119af9e81",
+        "mandate_digest": "00b9b079e5f3f8d7ef1ec65c1e3aeba5b95854bc7d76d68e91f899dd27e4a036",
+        "mandate_id": "mandate-1273691700.proposal-1273691700",
+        "mandate_revision": 1,
+        "manifest": "Create a recurring monthly payment stream of 4000 units for general operations and grants.",
+        "nonce": "conflict-1273691700",
+        "permit_digest": "",
+        "recipient": "0x3333333333333333333333333333333333333333",
+        "status": "BLOCKED",
+        "target": "0x1111111111111111111111111111111111111111",
+        "value": 4000,
+        "verdict": "SCOPE_EXCEEDED",
+        "violations": [
+          "INVALID_PURPOSE",
+          "PROHIBITED_GRANTS",
+          "PROHIBITED_RECURRING"
+        ]
+      }
+    },
+    {
+      "label": "publisher seals future-stale action finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0xcd345243a57cd77d0fd52ffc2566a66eda92404bbd3990f01c631340c42d146d",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "publisher advances mandate revision finalized with SUCCESS",
+      "pass": true,
+      "details": {
+        "hash": "0x2e34938c8cbe2d9548cdca74fc0bc0aa49d3fae0b596c38d77ae0de696d7eeef",
+        "status": "FINALIZED",
+        "execution": "SUCCESS"
+      }
+    },
+    {
+      "label": "stale action assessment is rejected finalized with ERROR",
+      "pass": true,
+      "details": {
+        "hash": "0x2fb5911c0a08663da7c80013b4334d2186c9b8f9bf7b38cadf349be4f6a7d8b3",
+        "status": "FINALIZED",
+        "execution": "ERROR"
+      }
+    },
+    {
+      "label": "stale rejection preserves action state",
+      "pass": true,
+      "details": {
+        "before": {
+          "action_id": "mandate-1273691700.proposal-1273691700.stale",
+          "asset": "0x2222222222222222222222222222222222222222",
+          "calldata_digest": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "chain_id": 1,
+          "commitment": "14892941d6bbe5f4a44a97544cdf7d9f59ece73bc9ac1269879a119a45a90c70",
+          "consumed": false,
+          "executor": "0x2da5393d7bbb9a037dc3abb56dbbc5c150fc843f",
+          "exists": true,
+          "finding": "",
+          "finding_digest": "",
+          "mandate_digest": "00b9b079e5f3f8d7ef1ec65c1e3aeba5b95854bc7d76d68e91f899dd27e4a036",
+          "mandate_id": "mandate-1273691700.proposal-1273691700",
+          "mandate_revision": 1,
+          "manifest": "Execute one payment of 4000 units for the independent smart-contract security audit. No recurring stream, grant, swap, or additional side effect.",
+          "nonce": "stale-1273691700",
+          "permit_digest": "",
+          "recipient": "0x3333333333333333333333333333333333333333",
+          "status": "PENDING_ASSESSMENT",
+          "target": "0x1111111111111111111111111111111111111111",
+          "value": 3000,
+          "verdict": "",
+          "violations": []
+        },
+        "after": {
+          "action_id": "mandate-1273691700.proposal-1273691700.stale",
+          "asset": "0x2222222222222222222222222222222222222222",
+          "calldata_digest": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "chain_id": 1,
+          "commitment": "14892941d6bbe5f4a44a97544cdf7d9f59ece73bc9ac1269879a119a45a90c70",
+          "consumed": false,
+          "executor": "0x2da5393d7bbb9a037dc3abb56dbbc5c150fc843f",
+          "exists": true,
+          "finding": "",
+          "finding_digest": "",
+          "mandate_digest": "00b9b079e5f3f8d7ef1ec65c1e3aeba5b95854bc7d76d68e91f899dd27e4a036",
+          "mandate_id": "mandate-1273691700.proposal-1273691700",
+          "mandate_revision": 1,
+          "manifest": "Execute one payment of 4000 units for the independent smart-contract security audit. No recurring stream, grant, swap, or additional side effect.",
+          "nonce": "stale-1273691700",
+          "permit_digest": "",
+          "recipient": "0x3333333333333333333333333333333333333333",
+          "status": "PENDING_ASSESSMENT",
+          "target": "0x1111111111111111111111111111111111111111",
+          "value": 3000,
+          "verdict": "",
+          "violations": []
+        }
+      }
+    },
+    {
+      "label": "namespace counters and global open-permit invariant",
+      "pass": true,
+      "details": {
+        "mandate": {
+          "active": true,
+          "asset": "0x2222222222222222222222222222222222222222",
+          "chain_id": 1,
+          "dao_id": "mandate-1273691700",
+          "exists": true,
+          "mandate_digest": "6bb12f2feb6a6bc5771b79de7bb80e6fa1826c0d287cb6ebdb3c1178120cf021",
+          "mandate_id": "mandate-1273691700.proposal-1273691700",
+          "mandate_text": "Authorize one payment up to 5000 units solely for an independent smart-contract security audit. Recurring streams, grants, swaps, and unrelated transfers are prohibited. Reporting must be delivered after completion.",
+          "max_value": 5000,
+          "open_action_id": "",
+          "publisher": "0xeb57bc7125fa60d7482ce12058397369ab3581f8",
+          "recipient": "0x3333333333333333333333333333333333333333",
+          "revision": 2,
+          "source_ref": "amended-1273691700",
+          "source_url": "https://snapshot.org/#/mandatelock-demo",
+          "target": "0x1111111111111111111111111111111111111111"
+        },
+        "dao": {
+          "authority": "0xeb57bc7125fa60d7482ce12058397369ab3581f8",
+          "consumed_count": 1,
+          "dao_id": "mandate-1273691700",
+          "exists": true,
+          "mandate_count": 1
+        },
+        "stats": {
+          "consumed": 3,
+          "daos": 3,
+          "mandates": 3,
+          "open_permits": 0
+        },
+        "note": "Global totals include two earlier runner attempts that continued after their host sessions detached. This run is proven by its namespace-scoped DAO counter and exact transaction trail."
+      }
+    }
+  ],
+  "final": {
+    "version": {
+      "name": "MandateLock",
+      "schema": "semantic-treasury-execution-firewall-v1",
+      "version": 1
+    },
+    "pass": {
+      "action_id": "mandate-1273691700.proposal-1273691700.pass",
+      "asset": "0x2222222222222222222222222222222222222222",
+      "calldata_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "chain_id": 1,
+      "commitment": "f8ce05395106a4fc328b4d04de83d579b0b53b10ea6b9ef47d4548eba3e7f207",
+      "consumed": true,
+      "executor": "0x2da5393d7bbb9a037dc3abb56dbbc5c150fc843f",
+      "exists": true,
+      "finding": "The action is a one-time payment of 4000 units to a recipient for the stated purpose of an independent smart-contract security audit. This falls within the authorized one-time payment cap of 5000 units. No recurring stream, grant, swap, or additional side effect is indicated. The action aligns with the mandate's purpose and does not exhibit prohibited side effects or conditions.",
+      "finding_digest": "0afd9b674fdf0d17eaae72273731084694a69dbb1ef3eeb9953015fb8b2d6ca8",
+      "mandate_digest": "00b9b079e5f3f8d7ef1ec65c1e3aeba5b95854bc7d76d68e91f899dd27e4a036",
+      "mandate_id": "mandate-1273691700.proposal-1273691700",
+      "mandate_revision": 1,
+      "manifest": "Execute one payment of 4000 units for the independent smart-contract security audit. No recurring stream, grant, swap, or additional side effect.",
+      "nonce": "pass-1273691700",
+      "permit_digest": "e0fcaac2aef7356983aa1094584c6991c1fc7a53caa49cc03088401329cd55e1",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "status": "CONSUMED",
+      "target": "0x1111111111111111111111111111111111111111",
+      "value": 4000,
+      "verdict": "COMPLIANT",
+      "violations": []
+    },
+    "overflow": {
+      "action_id": "mandate-1273691700.proposal-1273691700.overflow",
+      "asset": "0x2222222222222222222222222222222222222222",
+      "calldata_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "chain_id": 1,
+      "commitment": "62130c6c4bcaa57e16f2bab266252946f12186b3ef8692ea0881994aa30eaebd",
+      "consumed": false,
+      "executor": "0x2da5393d7bbb9a037dc3abb56dbbc5c150fc843f",
+      "exists": true,
+      "finding": "Structured action fields exceed the exact deterministic mandate scope.",
+      "finding_digest": "cf29c2f8484ca8922608c26adc5a60deba438ee108537ca0660946febbce7685",
+      "mandate_digest": "00b9b079e5f3f8d7ef1ec65c1e3aeba5b95854bc7d76d68e91f899dd27e4a036",
+      "mandate_id": "mandate-1273691700.proposal-1273691700",
+      "mandate_revision": 1,
+      "manifest": "Execute one payment of 4000 units for the independent smart-contract security audit. No recurring stream, grant, swap, or additional side effect.",
+      "nonce": "overflow-1273691700",
+      "permit_digest": "",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "status": "BLOCKED",
+      "target": "0x1111111111111111111111111111111111111111",
+      "value": 7500,
+      "verdict": "SCOPE_EXCEEDED",
+      "violations": [
+        "VALUE_EXCEEDS_CAP"
+      ]
+    },
+    "conflict": {
+      "action_id": "mandate-1273691700.proposal-1273691700.conflict",
+      "asset": "0x2222222222222222222222222222222222222222",
+      "calldata_digest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "chain_id": 1,
+      "commitment": "46300e6f24c7c73b0bdad62039407da2f3e77f6b3bcd589c8b9eb44d7ecb2868",
+      "consumed": false,
+      "executor": "0x2da5393d7bbb9a037dc3abb56dbbc5c150fc843f",
+      "exists": true,
+      "finding": "The action attempts to establish a recurring monthly stream for general operations and grants, whereas the mandate strictly limits the authorization to a one-time payment solely for a security audit.",
+      "finding_digest": "858be1fa5baba0e560d69e806c2b08c8cfbef12f050cfa427ae9ed3119af9e81",
+      "mandate_digest": "00b9b079e5f3f8d7ef1ec65c1e3aeba5b95854bc7d76d68e91f899dd27e4a036",
+      "mandate_id": "mandate-1273691700.proposal-1273691700",
+      "mandate_revision": 1,
+      "manifest": "Create a recurring monthly payment stream of 4000 units for general operations and grants.",
+      "nonce": "conflict-1273691700",
+      "permit_digest": "",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "status": "BLOCKED",
+      "target": "0x1111111111111111111111111111111111111111",
+      "value": 4000,
+      "verdict": "SCOPE_EXCEEDED",
+      "violations": [
+        "INVALID_PURPOSE",
+        "PROHIBITED_GRANTS",
+        "PROHIBITED_RECURRING"
+      ]
+    },
+    "stale": {
+      "action_id": "mandate-1273691700.proposal-1273691700.stale",
+      "asset": "0x2222222222222222222222222222222222222222",
+      "calldata_digest": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "chain_id": 1,
+      "commitment": "14892941d6bbe5f4a44a97544cdf7d9f59ece73bc9ac1269879a119a45a90c70",
+      "consumed": false,
+      "executor": "0x2da5393d7bbb9a037dc3abb56dbbc5c150fc843f",
+      "exists": true,
+      "finding": "",
+      "finding_digest": "",
+      "mandate_digest": "00b9b079e5f3f8d7ef1ec65c1e3aeba5b95854bc7d76d68e91f899dd27e4a036",
+      "mandate_id": "mandate-1273691700.proposal-1273691700",
+      "mandate_revision": 1,
+      "manifest": "Execute one payment of 4000 units for the independent smart-contract security audit. No recurring stream, grant, swap, or additional side effect.",
+      "nonce": "stale-1273691700",
+      "permit_digest": "",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "status": "PENDING_ASSESSMENT",
+      "target": "0x1111111111111111111111111111111111111111",
+      "value": 3000,
+      "verdict": "",
+      "violations": []
+    },
+    "mandate": {
+      "active": true,
+      "asset": "0x2222222222222222222222222222222222222222",
+      "chain_id": 1,
+      "dao_id": "mandate-1273691700",
+      "exists": true,
+      "mandate_digest": "6bb12f2feb6a6bc5771b79de7bb80e6fa1826c0d287cb6ebdb3c1178120cf021",
+      "mandate_id": "mandate-1273691700.proposal-1273691700",
+      "mandate_text": "Authorize one payment up to 5000 units solely for an independent smart-contract security audit. Recurring streams, grants, swaps, and unrelated transfers are prohibited. Reporting must be delivered after completion.",
+      "max_value": 5000,
+      "open_action_id": "",
+      "publisher": "0xeb57bc7125fa60d7482ce12058397369ab3581f8",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "revision": 2,
+      "source_ref": "amended-1273691700",
+      "source_url": "https://snapshot.org/#/mandatelock-demo",
+      "target": "0x1111111111111111111111111111111111111111"
+    },
+    "dao": {
+      "authority": "0xeb57bc7125fa60d7482ce12058397369ab3581f8",
+      "consumed_count": 1,
+      "dao_id": "mandate-1273691700",
+      "exists": true,
+      "mandate_count": 1
+    },
+    "stats": {
+      "consumed": 3,
+      "daos": 3,
+      "mandates": 3,
+      "open_permits": 0
+    }
+  }
+}

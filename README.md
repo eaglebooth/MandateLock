@@ -1,5 +1,7 @@
 # MandateLock
 
+Copy-ready steward response and evidence links: [resubmission information](docs/RESUBMISSION_INFORMATION.md).
+
 Frontend remediation and its evidence/limitations: [transaction consistency audit](docs/FRONTEND_TRANSACTION_AUDIT.md).
 
 Latest steward update: [receipt parsing fix](docs/STEWARD_UPDATE_RECEIPT_FIX.md) for the vote-map error after transaction submission.

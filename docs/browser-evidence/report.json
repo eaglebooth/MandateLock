@@ -1,0 +1,199 @@
+{
+  "kind": "browser-regression-with-mocked-wallet-and-rpc",
+  "liveTransactions": false,
+  "url": "https://mandatelock.vercel.app",
+  "scenarios": [
+    {
+      "name": "happy",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "VERIFIEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "screenshot": "docs/browser-evidence/happy.png"
+    },
+    {
+      "name": "vote-map",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "VERIFIEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "screenshot": "docs/browser-evidence/vote-map.png"
+    },
+    {
+      "name": "reject-signature",
+      "pass": true,
+      "walletSubmissions": 0,
+      "receiptPolls": 0,
+      "status": "ACTION STOPPEDUser rejected the request.\n\nDetails: User rejected signature\nVersion: viem@2.38.6",
+      "screenshot": "docs/browser-evidence/reject-signature.png"
+    },
+    {
+      "name": "execution-error",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 1,
+      "status": "ACTION STOPPEDTransaction has not finalized successfullyEXPLORER ",
+      "screenshot": "docs/browser-evidence/execution-error.png"
+    },
+    {
+      "name": "unchanged-state",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 1,
+      "status": "ACTION STOPPEDFinalized, but authoritative state did not changeEXPLORER ",
+      "screenshot": "docs/browser-evidence/unchanged-state.png"
+    },
+    {
+      "name": "full-sync-error",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "ACTION STOPPEDFinalized, but full ledger readback failed; sync againEXPLORER ",
+      "screenshot": "docs/browser-evidence/full-sync-error.png"
+    },
+    {
+      "name": "wallet-change",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "ACTION STOPPEDWallet or network changed; use SYNC LEDGER to inspect the submitted transactionEXPLORER ",
+      "screenshot": "docs/browser-evidence/wallet-change.png"
+    },
+    {
+      "name": "network-change",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "ACTION STOPPEDWallet or network changed; use SYNC LEDGER to inspect the submitted transactionEXPLORER ",
+      "screenshot": "docs/browser-evidence/network-change.png"
+    },
+    {
+      "name": "pending-double-submit",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 3,
+      "status": "VERIFIEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "screenshot": "docs/browser-evidence/pending-double-submit.png"
+    },
+    {
+      "name": "refresh-recovery",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "SYNCEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "screenshot": "docs/browser-evidence/refresh-recovery.png"
+    },
+    {
+      "name": "refresh-pending",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 3,
+      "status": "SYNCEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "screenshot": "docs/browser-evidence/refresh-pending.png"
+    },
+    {
+      "name": "stale-selection",
+      "pass": true,
+      "walletSubmissions": 0,
+      "receiptPolls": 0,
+      "status": "NEEDS_SYNCSuccess is shown only after finality and matching contract readback.",
+      "screenshot": "docs/browser-evidence/stale-selection.png"
+    },
+    {
+      "name": "rpc-timeout",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 1,
+      "status": "ACTION STOPPEDMissing or invalid parameters.\nDouble check you have provided the correct parameters.\n\nDetails: Injected RPC timeout\nVersion: viem@2.38.6EXPLORER ",
+      "screenshot": "docs/browser-evidence/rpc-timeout.png"
+    },
+    {
+      "name": "canceled",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 1,
+      "status": "ACTION STOPPEDTransaction stopped with CANCELED; inspect its Explorer linkEXPLORER ",
+      "screenshot": "docs/browser-evidence/canceled.png"
+    },
+    {
+      "name": "undetermined",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 1,
+      "status": "ACTION STOPPEDTransaction stopped with UNDETERMINED; inspect its Explorer linkEXPLORER ",
+      "screenshot": "docs/browser-evidence/undetermined.png"
+    },
+    {
+      "name": "roles-happy",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "VERIFIEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "screenshot": "docs/browser-evidence/roles-happy.png"
+    },
+    {
+      "name": "mandate-happy",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "VERIFIEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "screenshot": "docs/browser-evidence/mandate-happy.png"
+    },
+    {
+      "name": "seal-happy",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "VERIFIEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "screenshot": "docs/browser-evidence/seal-happy.png"
+    },
+    {
+      "name": "assess-happy",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "VERIFIEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "screenshot": "docs/browser-evidence/assess-happy.png"
+    },
+    {
+      "name": "consume-happy",
+      "pass": true,
+      "walletSubmissions": 1,
+      "receiptPolls": 2,
+      "status": "VERIFIEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "screenshot": "docs/browser-evidence/consume-happy.png"
+    },
+    {
+      "name": "revoked-publisher",
+      "pass": true,
+      "walletSubmissions": 0,
+      "receiptPolls": 0,
+      "status": "SYNCEDSuccess is shown only after finality and matching contract readback.",
+      "screenshot": "docs/browser-evidence/revoked-publisher.png"
+    },
+    {
+      "name": "revoked-executor",
+      "pass": true,
+      "walletSubmissions": 0,
+      "receiptPolls": 0,
+      "status": "SYNCEDSuccess is shown only after finality and matching contract readback.",
+      "screenshot": "docs/browser-evidence/revoked-executor.png"
+    },
+    {
+      "name": "wrong-dao-link",
+      "pass": true,
+      "walletSubmissions": 0,
+      "receiptPolls": 0,
+      "status": "ACTION STOPPEDMandate belongs to another DAO; correct the selected IDs",
+      "screenshot": "docs/browser-evidence/wrong-dao-link.png"
+    },
+    {
+      "name": "wrong-mandate-link",
+      "pass": true,
+      "walletSubmissions": 0,
+      "receiptPolls": 0,
+      "status": "ACTION STOPPEDAction belongs to another mandate; correct the selected IDs",
+      "screenshot": "docs/browser-evidence/wrong-mandate-link.png"
+    }
+  ]
+}

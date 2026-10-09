@@ -1,0 +1,65 @@
+{
+  "kind": "live-browser-wallet-signing-and-studionet-readback",
+  "url": "http://localhost:3109",
+  "contract": "0x3A03347dBA24C3a7fa1511Dd698B9D8dfA334B2a",
+  "dao": "ui-audit-1791538907407",
+  "actors": [
+    "0xeb57bc7125fa60d7482CE12058397369AB3581f8",
+    "0x2da5393d7BBb9A037dc3abB56DbbC5C150fc843f"
+  ],
+  "transactions": [
+    {
+      "label": "Browser creates DAO",
+      "caller": "0xeb57bc7125fa60d7482CE12058397369AB3581f8",
+      "method": "create_dao",
+      "args": [
+        "ui-audit-1791538907407"
+      ],
+      "hash": "0x80b5737928f5f4f58f2dd81c4aa3d54cd09e7fb3c02bba4fa51e7d3f944571bb",
+      "status": "FINALIZED",
+      "ui": "VERIFIEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "before": {
+        "exists": false
+      },
+      "after": {
+        "authority": "0xeb57bc7125fa60d7482ce12058397369ab3581f8",
+        "consumed_count": 0,
+        "dao_id": "ui-audit-1791538907407",
+        "exists": true,
+        "mandate_count": 0
+      }
+    },
+    {
+      "label": "Browser registers publisher",
+      "caller": "0xeb57bc7125fa60d7482CE12058397369AB3581f8",
+      "method": "set_publisher",
+      "args": [
+        "ui-audit-1791538907407",
+        "0xeb57bc7125fa60d7482CE12058397369AB3581f8",
+        true
+      ],
+      "hash": "0xd0c77d3dc26697564a28af8b9dfc5b923b8d6f19c251e886c432e288beedfe1e",
+      "status": "FINALIZED",
+      "ui": "VERIFIEDSuccess is shown only after finality and matching contract readback.EXPLORER ",
+      "before": {
+        "executor": false,
+        "publisher": false
+      },
+      "after": {
+        "executor": false,
+        "publisher": true
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "label": "Browser creates DAO",
+      "pass": true
+    },
+    {
+      "label": "Browser registers publisher",
+      "pass": true
+    }
+  ],
+  "error": "Waiting failed: 30000ms exceeded"
+}

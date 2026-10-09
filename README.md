@@ -31,6 +31,8 @@ npm run build
 
 The UI uses `genlayer-js`, displays the active StudioNet contract and Explorer links, waits for finality, and verifies the expected state through contract readback before showing `VERIFIED`.
 
+Steward resubmission note: [`docs/STEWARD_UPDATE_CHAIN_FIX.md`](docs/STEWARD_UPDATE_CHAIN_FIX.md) documents the frontend chain-mismatch fix, unchanged contract deployment, production URL, and exact verification path.
+
 StudioNet deployment: [`0x3A03347dBA24C3a7fa1511Dd698B9D8dfA334B2a`](https://explorer-studio.genlayer.com/address/0x3A03347dBA24C3a7fa1511Dd698B9D8dfA334B2a).
 
 The finalized two-wallet lifecycle is documented in [`docs/LIVE_STUDIONET_EVIDENCE.md`](docs/LIVE_STUDIONET_EVIDENCE.md): 18 finalized transactions and 25 passing assertions across compliant execution, authorization failures, binding substitution, replay, deterministic scope overflow, semantic conflict and stale-revision rollback.

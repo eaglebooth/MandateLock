@@ -1,5 +1,7 @@
 # MandateLock
 
+Latest steward update: [receipt parsing fix](docs/STEWARD_UPDATE_RECEIPT_FIX.md) for the vote-map error after transaction submission.
+
 MandateLock is a GenLayer dApp that turns one authenticated governance mandate into a revision-bound, single-use treasury execution permit. Validators judge semantic purpose and prohibitions; deterministic contract logic enforces chain, target, asset, recipient, value, calldata digest, executor and nonce.
 
 ## Proof boundary
